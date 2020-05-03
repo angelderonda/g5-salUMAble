@@ -8,8 +8,6 @@ Daniel de Fez Ramos
 
 Fátima Moreno Moreno
 
-Ananda Martin Satchaphan
-
 Jesus Cestino González
 
 María José Chaves Martínez
