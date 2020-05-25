@@ -1,1 +1,0 @@
-Pantallas del paciente (visual) -> en html
