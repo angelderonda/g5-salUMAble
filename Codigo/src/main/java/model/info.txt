@@ -1,1 +1,0 @@
-Las clases principales (y enum)
