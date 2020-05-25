@@ -1,1 +1,0 @@
-Test de las clases principales usando JUnit y Mockito
