@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Página administrador</title>
+<link th:href="@{/styles/css/colores_main.css}" rel="stylesheet" />
+</head>
+<body class = "fondo_admin">
+	<h1>Admin Page</h1>
+	
+	 <a th:href="@{/admin/registrar_paciente}">
+	<button>Registrar paciente</button>
+	 </a>
+	
+	 <a th:href="@{/admin/registrar_doctor}">
+	<button>Registrar doctor</button>
+	 </a>
+	
+	 <a th:href="@{/admin/asignar_doctor}">
+	<button>Asignar doctor</button>
+	 </a>
+</body>
+</html>

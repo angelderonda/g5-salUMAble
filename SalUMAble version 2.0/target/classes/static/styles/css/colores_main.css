@@ -1,0 +1,12 @@
+@charset "ISO-8859-1";
+body.fondo_admin{
+	background-color: orange;
+}
+
+body.fondo_doctor{
+	background-color: aqua;
+}
+
+body.fondo_paciente{
+	background-color: fuchsia;
+}
