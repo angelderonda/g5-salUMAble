@@ -1,0 +1,206 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+
+body {
+  display: block;
+  height: 100vh;
+  font-family: Lato, sans-serif;
+  background: #eeeeee;
+}
+
+.titulo {
+	text-align: center;
+}
+
+.form-control {
+  --default-color: currentColor;
+  --invalid-color: #e74c3c;
+  --valid-color: #3498db;
+  --border-bottom-color: currentColor;
+
+  position: relative;
+  border-bottom: 1px solid var(--border-bottom-color);
+
+  &::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: 2px;
+    background: var(--valid-color);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: 0.3s;
+  }
+
+  &:focus-within::after {
+    transform: scaleX(1);
+  }
+
+  input {
+    padding: 3px 0;
+    font-size: inherit;
+    font-weight: inherit;
+    color: currentColor;
+    background: transparent;
+    border: none;
+    outline: none;
+
+    &:invalid ~ label {
+      color: var(--invalid-color);
+    }
+
+    &:valid ~ label {
+      color: var(--valid-color);
+    }
+
+    &:placeholder-shown ~ label {
+      color: var(--default-color);
+    }
+
+    // label will float in 2 situations based on its sibling input:
+    // 1. input get focus
+    // 2. input has text filled
+    &:focus ~ label,
+    &:not(:placeholder-shown) ~ label {
+      transform: translateY(-120%) scale(0.75);
+    }
+  }
+
+  label {
+    position: absolute;
+    top: 8px;
+    left: 0;
+    transition: 0.3s;
+    transform-origin: left;
+  }
+}
+	.overlay {
+		background: rgba(0,0,0,.3);
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		align-items: center;
+		justify-content: center;
+		display: flex;
+		visibility: hidden;
+	}
+	.overlay.active{
+		visibility: visible;
+	}
+	.popup {
+		background: #F8F8F8;
+		box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
+		border-radius: 3px;
+		font-family: 'Montserrat', sans-serif;
+		padding: 20px;
+		text-align: center;
+		width: 600px;
+		
+	}
+	.popup .btn-cerrar-popup {
+		font-size: 16px;
+		line-height: 16px;
+		display: block;
+		text-align: right;
+		transition: .3s ease all;
+		color: #BBBBBB;
+	}
+	
+	.popup .btn-cerrar-popup:hover {
+	color: #000;
+	}
+	.popup h3 {
+		font-size: 36px;
+		color: #000000;
+		font-weight: 600;
+		margin-bottom: 10px;
+		opacity: 100;
+	}
+	.popup h4 {
+			font-size: 23px;
+			color: #BBBBB0;
+			font-weight: 300;
+			margin-bottom: 40px;
+			opacity: 100;
+		}
+
+.btn {
+  position: relative;
+  width: 100%;
+  padding: 6px 0;
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  color: currentColor;
+  background: transparent;
+  border: 2px solid hsla(204, 70%, 53%, 1);
+  outline: none;
+  cursor: pointer;
+  overflow: hidden;
+  transition: 0.6s;
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      120deg,
+      transparent,
+      hsla(204, 70%, 53%, 0.5),
+      transparent
+    );
+    transform: translateX(-100%);
+    transition: 0.6s;
+  }
+
+  &:hover {
+    box-shadow: 0 0 20px 10px hsla(204, 70%, 53%, 0.5);
+  }
+
+  &:hover::before {
+    transform: translateX(100%);
+  }
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 10px;
+  color: white;
+  background: rgba(0,0,0,0.8);
+  border-radius: 10px;
+  box-shadow: 0 0.4px 0.4px rgba(128, 128, 128, 0.109),
+    0 1px 1px rgba(128, 128, 128, 0.155),
+    0 2.1px 2.1px rgba(128, 128, 128, 0.195),
+    0 4.4px 4.4px rgba(128, 128, 128, 0.241),
+    0 12px 12px rgba(128, 128, 128, 0.35);
+
+  h1 {
+    margin: 0 0 24px 0;
+    font-size: 36px;
+  }
+  
+  .obligatorios {
+  	align-self:center;
+  }
+
+  .form-control {
+    margin: 18px 0;
+  }
+
+  .btn {
+    width: 100%;
+    margin: 18px 0 9px 0;
+  }
+
+
+
+	
+}
+

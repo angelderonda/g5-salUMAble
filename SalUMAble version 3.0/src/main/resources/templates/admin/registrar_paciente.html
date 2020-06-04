@@ -3,7 +3,10 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Registrar paciente</title>
-<link th:href="@{/styles/css/cool_form.css}" rel="stylesheet"/>
+<link href="cool_form.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600|Open+Sans" rel="stylesheet"> 
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+
 </head>
 <body>
 <div class = "titulo">
@@ -72,8 +75,24 @@
 		<input class="btn" type="submit" value="Enviar">
 		<input class="btn" type="reset" value="Borrar">
 	</p>
-</form>
+		<button id="btn-abrir-popup" class="btn">¿Necesitas ayuda?</button>
+		
+		<div class="overlay" id="overlay">
+			<div class="popup" id="popup">
+				<a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+				<h3>¿Ayuda para registrar un paciente?</h3>
+				<h4>· Prueba a rellenar los datos con asteriscos.</h4>
+				<h4>· Quizás hayas olvidado algún dato relevante, comprueba que has rellenado todo lo indicado por el paciente.</h4>
+				<h4>· Puede que el paciente ya exista, ten cuidado con suplantar identidades, eh.</h4>
+				<h4>· Comprueba tu conexión a la base de datos (Por experiencia).</h4>
 
+
+
+			</div>
+		</div>
+		
+	</form>
+	<script src="popup.js"></script>
 
 </body>
 </html>

@@ -3,77 +3,121 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Registrar doctor</title>
-<link th:href="@{/styles/css/cool_form.css}" rel="stylesheet"/>
+<link href="cool_form.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600|Open+Sans" rel="stylesheet"> 
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+
 </head>
 <body>
-<div class = "titulo">
-<h1>Registrar doctor</h1>
-<p class = "obligatorios"> * Los campos con el asterisco son obligatorios</p>
-</div>
-<form class="login-form" th:action="@{/admin/saveDoctor}" method="post" th:object="${usuariodoctor}">
-	
-	<div class="form-control">
-	<p><label for="nombre">Nombre*:</label> 
-	<input type="text" id="nombre" size="40" placeholder="Escriba su nombre" required th:field="*{nombre}"></p>
+	<div class="titulo">
+		<h1>Registrar doctor</h1>
+		<p class="obligatorios">* Los campos con el asterisco son
+			obligatorios</p>
 	</div>
-	
-	<div class="form-control">
-	<p><label for="apellidos">Apellidos*: </label>
-	<input type="text" id="apellidos" size="60" placeholder="Escriba sus apellidos" required th:field="*{apellidos}"></p>
-	</div>
-	
-	<div class="form-control">
-	<p><label for="dni">DNI*:</label> 
-	<input type="text" id="dni" maxlength="9" placeholder="Escriba su DNI" required th:field="*{DNI}"></p>
-	</div>
-	
-	<div class="form-control">
-	<p><label for="edad">Edad:</label> 
-	<input type="number" id="edad" maxlength="3" placeholder="Escriba su edad" th:field="*{edad}"></p>
-	</div>
-	
-	<div class="form-control">
-	<p><label for="localidad">Localidad:</label> 
-	<input type="text" id="localidad" size="40" placeholder="Escriba su localidad" th:field="*{localidad}"></p>
-	</div>
-	
-	<!--<p><label for="horaEntrada">Hora entrada:</label> 
-	<input type="time" id="horaEntrada" min="00:00" max="00:00" required th:field="*{horaEntrada}"></p>
-	
-	<p><label for="horaSalida">Hora salida:</label> 
-	<input type="time" id="horaSalida" min="00:00" max="00:00" required th:field="*{horaSalida}"></p>-->
-	
-	
-	<div class="form-control">
-	<p><label for="sala">Sala:</label> 
-	<input type="number" id="sala" size="40" placeholder="Escriba su sala" th:field="*{sala}"></p>
-	</div>
-	
-	<div class="form-control">
-	<p><label for="rama">Rama Medica*</label>
-		<select id="rama" th:field="*{rama}">
-			<option selected value="MEDICINA_GENERAL">Medicina General</option>
-			<option value="TRAUMATOLOGIA">Traumatologia</option>
-			<option value="CARDIOLOGIA">Cardiologia</option>
-			<option value="NEUROLOGIA">Neurologia</option>
-			<option value="NEUMOLOGIA">Neumologia</option>
-			<option value="NEFROLOGIA">Nefrologia</option>
-		</select>
-	<p>
-	</div>
-	
-	
-	<div class="form-control">
-	<p><label for="contrasena">Contrasena:</label> 
-	<input type="text" id="contrasena" maxlength="9" placeholder="Escriba su contrasena" th:field="*{password}">
-	</p>
-	</div>
-	<p>
-	<input class="btn" type="submit" value="Enviar">
-	<input class="btn" type="reset" value="Borrar">
-	</p>
-</form>
+	<form class="login-form" th:action="@{/admin/saveDoctor}" method="post"
+		th:object="${usuariodoctor}">
 
+		<div class="form-control">
+			<p>
+				<label for="nombre">Nombre*:</label> <input type="text" id="nombre"
+					size="40" placeholder="Escriba su nombre" required
+					th:field="*{nombre}">
+			</p>
+		</div>
+
+		<div class="form-control">
+			<p>
+				<label for="apellidos">Apellidos*: </label> <input type="text"
+					id="apellidos" size="60" placeholder="Escriba sus apellidos"
+					required th:field="*{apellidos}">
+			</p>
+		</div>
+
+		<div class="form-control">
+			<p>
+				<label for="dni">DNI*:</label> <input type="text" id="dni"
+					maxlength="9" placeholder="Escriba su DNI" required
+					th:field="*{DNI}">
+			</p>
+		</div>
+
+		<div class="form-control">
+			<p>
+				<label for="edad">Edad:</label> <input type="number" id="edad"
+					maxlength="3" placeholder="Escriba su edad" th:field="*{edad}">
+			</p>
+		</div>
+
+		<div class="form-control">
+			<p>
+				<label for="localidad">Localidad:</label> <input type="text"
+					id="localidad" size="40" placeholder="Escriba su localidad"
+					th:field="*{localidad}">
+			</p>
+		</div>
+
+		<p>
+			<label for="horaEntrada">Hora entrada:</label> <input type="number"
+				id="horaEntrada" min="0" max="23" required th:field="*{horaEntrada}">
+		</p>
+
+		<p>
+			<label for="horaSalida">Hora salida:</label> <input type="number"
+				id="horaSalida" min="0" max="23" required th:field="*{horaSalida}">
+		</p>
+
+
+		<div class="form-control">
+			<p>
+				<label for="sala">Sala:</label> <input type="number" id="sala"
+					size="40" placeholder="Escriba su sala" th:field="*{sala}">
+			</p>
+		</div>
+
+		<div class="form-control">
+			<p>
+				<label for="rama">Rama Medica*</label> <select id="rama"
+					th:field="*{rama}">
+					<option selected value="MEDICINA_GENERAL">Medicina General</option>
+					<option value="TRAUMATOLOGIA">Traumatologia</option>
+					<option value="CARDIOLOGIA">Cardiologia</option>
+					<option value="NEUROLOGIA">Neurologia</option>
+					<option value="NEUMOLOGIA">Neumologia</option>
+					<option value="NEFROLOGIA">Nefrologia</option>
+				</select>
+			<p>
+		</div>
+
+
+		<div class="form-control">
+			<p>
+				<label for="contrasena">Contrasena:</label> <input type="text"
+					id="contrasena" maxlength="9" placeholder="Escriba su contrasena"
+					th:field="*{password}">
+			</p>
+		</div>
+		<p>
+			<input class="btn" type="submit" value="Enviar"> <input
+				class="btn" type="reset" value="Borrar">
+		</p>
+		
+		<button id="btn-abrir-popup" class="btn">¿Necesitas ayuda?</button>
+		
+		<div class="overlay" id="overlay">
+			<div class="popup" id="popup">
+				<a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+				<h3>¿Ayuda para registrar un doctor?</h3>
+				<h4>· Prueba a rellenar los datos con asteriscos</h4>
+				<h4>· Quizás hayas olvidado la hora de entrada o de salida</h4>
+				<h4>· Comprueba tu conexión a la base de datos (Por experiencia)</h4>
+
+
+
+			</div>
+		</div>
+		
+	</form>
+	<script src="popup.js"></script>
 
 </body>
 </html>

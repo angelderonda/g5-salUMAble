@@ -3,7 +3,9 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Asignar doctor</title>
-<link th:href="@{/styles/css/asignar_doctor.css}" rel="stylesheet" />
+<link href="cool_form.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600|Open+Sans" rel="stylesheet"> 
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
 </head>
 <body>
 	<h1 style="text-align: center;">Asignar Doctor</h1>
@@ -157,7 +159,22 @@
 			</tr>
 		</tbody>
 	</table>
+	
+	<button id="btn-abrir-popup" class="btn">¿Necesitas ayuda?</button>
 
+		<div class="overlay" id="overlay">
+			<div class="popup" id="popup">
+				<a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+				<h3>¿Ayuda para asignar un doctor?</h3>
+				<h4>· Quizás la versión que estás utilizando de salUMAble sea una versión antigua:</h4>
+				<h4>Prueba a hablar a alguno de los desarrolladores(majo es la unica que entiende, y cestino es un guapera)</h4>
+
+
+
+
+			</div>
+		</div>
+		<script src="popup.js"></script>
 
 
 </body>
