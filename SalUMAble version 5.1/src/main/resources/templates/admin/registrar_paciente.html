@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Registrar paciente</title>
+<link th:href="@{/styles/css/cool_form.css}" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600|Open+Sans" rel="stylesheet"> 
+<link th:href="@{/styles/css/font_awesome.css}" rel="stylesheet">
+<link rel="shortcut icon" href="/images/LOGO.png">
+
+</head>
+<body>
+<div class = "titulo">
+<h1>Registrar paciente</h1>
+<p class="obligatorios"> * Los campos con el asterisco son obligatorios</p>
+</div>
+<form class="login-form" th:action="@{/admin/savePaciente}" method="post" th:object="${usuariopaciente}">
+	
+	<div class="form-control">
+	<p><label for="nombre">Nombre*:</label> 
+	<input type="text" id="nombre" size="40" placeholder="Escriba su nombre" required th:field="*{nombre}"></p>
+	</div>
+	
+	<div class="form-control">
+	<p><label for="apellidos">Apellidos*: </label>
+	<input type="text" id="apellidos" size="60" placeholder="Escriba sus apellidos" required th:field="*{apellidos}"></p>
+	</div>
+	
+	<div class="form-control">
+	<p><label for="dni">DNI*:</label> 
+	<input type="text" id="dni" maxlength="9" placeholder="Escriba su DNI" required th:field="*{DNI}"></p>
+	</div>
+	
+	<div class="form-control">
+	<p><label for="edad">Edad:</label> 
+	<input type="number" id="edad" maxlength="3" placeholder="Escriba su edad" th:field="*{edad}"></p>
+	</div>
+	
+	<div class="form-control">
+	<p><label for="localidad">Localidad:</label> 
+	<input type="text" id="localidad" size="40" placeholder="Escriba su localidad" th:field="*{localidad}"></p>
+	</div>
+	
+	<div class="form-control">
+	<p><label for="telefono">Telefono:</label> 
+	<input type="number" id="telefono" maxlength="9" placeholder="Telefono de contacto" th:field="*{telefono}"></p>
+	</div>
+	
+	<div class="form-control">
+	<p><label for="sintomas">Sintomas:</label></p>
+	<p><textarea id="texto" rows="4" cols="40" placeholder="Describa sus sintomas" th:field="*{sintomas}"></textarea></p>
+	</div>
+	
+	<div class="form-control">
+	<p><label for="prioridad">Prioridad*</label>
+		<select id="prioridad" th:field="*{prioridad}">
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option selected value="4">4</option>
+		</select>
+	</div>
+	
+	<div class="form-control">
+	<p><label for="rama">Rama Medica*</label>
+		<select id="rama" th:field="*{rama}">
+			<option selected value="MEDICINA_GENERAL">Medicina General</option>
+			<option value="TRAUMATOLOGIA">Traumatologia</option>
+			<option value="CARDIOLOGIA">Cardiologia</option>
+			<option value="NEUROLOGIA">Neurologia</option>
+			<option value="NEUMOLOGIA">Neumologia</option>
+			<option value="NEFROLOGIA">Nefrologia</option>
+		</select>
+	</div>
+	<p>
+		<input class="btn" type="submit" value="Enviar">
+		<input class="btn" type="reset" value="Borrar">
+	</p>
+		<button id="btn-abrir-popup" class="btn">¿Necesitas ayuda?</button>
+		
+		<div class="overlay" id="overlay">
+			<div class="popup" id="popup">
+				<a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+				<h3>¿Ayuda para registrar un paciente?</h3>
+				<h4>· Prueba a rellenar los datos con asteriscos.</h4>
+				<h4>· Quizás hayas olvidado algún dato relevante, comprueba que has rellenado todo lo indicado por el paciente.</h4>
+				<h4>· Puede que el paciente ya exista, ten cuidado con suplantar identidades, eh.</h4>
+				<h4>· Comprueba tu conexión a la base de datos (Por experiencia).</h4>
+
+			</div>
+		</div>
+		
+	</form>
+	 <script type="text/javascript" th:src="@{/js/popup.js}"></script>
+
+</body>
+</html>
