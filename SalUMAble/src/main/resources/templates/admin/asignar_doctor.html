@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Asignar doctor</title>
+<link th:href="@{/styles/css/asignar_doctor.css}" rel="stylesheet" />
+<link rel="shortcut icon" href="/images/LOGO.png">
+</head>
+<!-- CUIDADO QUE ESTA CLASE ESTÁ MAL -->
+<body>
+	<h1 style="text-align: center;">Asignar Doctor</h1>
+
+
+	<h2>Medicina General</h2>
+
+	<table class="t01">
+	
+		<thead>
+			<tr>
+				<td>DNI</td>
+				<td>Nombre</td>
+				<td>Apellidos</td>
+				<td></td>
+			</tr>
+		</thead>
+
+		<tbody>	
+			<tr th:each="d : ${MEDICINA_GENERAL}">
+				<td th:text="${d.id}"></td>
+				<td th:text="${d.nombre}"></td>
+				<td th:text="${d.apellidos}"></td>			
+				<td><a><button type="button" id="boton_uno"
+							class="boton-estado btn-default">Asignar</button> </a></td>
+			</tr>
+		
+		</tbody>
+	
+
+
+
+	</table>
+	<br>
+
+	<h2>Traumatolog&iacute;a</h2>
+
+	<table class="t02">
+		<thead>
+
+			<tr>
+				<td>DNI</td>
+				<td>Nombre</td>
+				<td>Apellidos</td>
+				<td></td>
+			</tr>
+
+		</thead>
+		<tbody>
+			<tr>
+				<tr th:each="d : ${TRAUMATOLOGIA}">
+				<td th:text="${d.id}"></td>
+				<td th:text="${d.nombre}"></td>
+				<td th:text="${d.apellidos}"></td>	
+				<td><a><button type="button" id="boton_uno"
+							class="boton-estado btn-default">Asignar</button> </a></td>
+
+			</tr>
+		</tbody>
+	</table>
+	<h2>Cardiolog&iacute;a</h2>
+
+	<table class="t03">
+		<thead>
+
+			<tr>
+				<td>DNI</td>
+				<td>Nombre</td>
+				<td>Apellidos</td>
+				<td></td>
+			</tr>
+
+		</thead>
+		<tbody>
+			<tr>
+				<tr th:each="d : ${CARDIOLOGIA}">
+				<td th:text="${d.id}"></td>
+				<td th:text="${d.nombre}"></td>
+				<td th:text="${d.apellidos}"></td>	
+				<td><a><button type="button" id="boton_uno"
+							class="boton-estado btn-default">Asignar</button> </a></td>
+
+			</tr>
+		</tbody>
+	</table>
+	<h2>Neurolog&iacute;a</h2>
+
+	<table class="t04">
+		<thead>
+
+			<tr>
+				<td>DNI</td>
+				<td>Nombre</td>
+				<td>Apellidos</td>
+				<td></td>
+			</tr>
+
+		</thead>
+		<tbody>
+			<tr>
+				<tr th:each="d : ${NEUROLOGIA}">
+				<td th:text="${d.id}"></td>
+				<td th:text="${d.nombre}"></td>
+				<td th:text="${d.apellidos}"></td>					
+				<td><a><button type="button" id="boton_uno"
+							class="boton-estado btn-default">Asignar</button> </a></td>
+
+			</tr>
+		</tbody>
+	</table>
+	<h2>Neumolog&iacute;a</h2>
+
+	<table class="t05">
+		<thead>
+
+			<tr>
+				<td>DNI</td>
+				<td>Nombre</td>
+				<td>Apellidos</td>
+				<td></td>
+			</tr>
+
+		</thead>
+		<tbody>
+			<tr>
+				
+				<tr th:each="d : ${NEUMOLOGIA}">
+				<td th:text="${d.id}"></td>
+				<td th:text="${d.nombre}"></td>
+				<td th:text="${d.apellidos}"></td>				
+				<td><a><button type="button" id="boton_uno"
+							class="boton-estado btn-default">Asignar</button> </a></td>
+
+			</tr>
+		</tbody>
+	</table>
+	<h2>Nefrolog&iacute;a</h2>
+
+	<table class="t06">
+		<thead>
+
+			<tr>
+				<td>DNI</td>
+				<td>Nombre</td>
+				<td>Apellidos</td>
+				<td></td>
+			</tr>
+
+		</thead>
+		<tbody>
+			<tr>
+				<tr th:each="d : ${NEFROLOGIA}">	
+				<td th:text="${d.id}"></td>
+				<td th:text="${d.nombre}"></td>
+				<td th:text="${d.apellidos}"></td>	
+				<td><a><button type="button" id="boton_uno"
+							class="boton-estado btn-default">Asignar</button> </a></td>
+
+			</tr>
+		</tbody>
+	</table>
+
+
+
+</body>
+</html>
