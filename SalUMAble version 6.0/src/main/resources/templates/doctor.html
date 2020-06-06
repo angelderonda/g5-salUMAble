@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Página doctor</title>
+<link th:href="@{/styles/css/colores_main.css}" rel="stylesheet" />
+<link rel="shortcut icon" href="images/LOGO.png">
+</head>
+<body class = "fondo_doctor">
+    <h1 class="muchotexto">Página del doctor: </h1>
+
+    <h1 class="muchotexto" th:text="${usernameDoctor}" ></h1>
+    <h1 class = "muchotexto" th:text="${idDoctor}"></h1>
+	
+	
+	
+	
+	
+	<form class="login-form" th:action="@{/doctor/liberarPaciente/{id}(id = ${idDoctor})}" method = "post">
+	<button type="submit" class="boton-estado-btn-default">Liberar paciente</button>
+	</form>
+	
+	<br>
+	
+	<form class="login-form" th:action="@{/doctor/liberarConsulta/{id}(id = ${idDoctor})}" method = "post">
+	<button type="submit" class="boton-estado-btn-default">Liberar consulta</button>
+	</form>
+	
+	<br>
+	
+	<form class="login-form" th:action="@{/doctor/asignarTratamiento/{id}(id = ${idDoctor})}" method = "post">
+	<button type="submit" class="boton-estado-btn-default">Asignar tratamiento</button>
+	</form>
+	
+	<br>
+	<br>
+	<br>
+	<br>
+	
+	<a th:href="@{/}">
+	<button class = "logout" >Logout</button>
+	 </a>
+	
+</body>
+</html>

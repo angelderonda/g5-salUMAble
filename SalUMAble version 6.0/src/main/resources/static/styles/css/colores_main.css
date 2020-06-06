@@ -1,0 +1,190 @@
+@charset "ISO-8859-1";
+body.fondo_admin{
+	background-color: #eeeeee;
+}
+
+body.fondo_doctor{
+	background-image: url(https://images6.alphacoders.com/885/thumb-1920-885208.jpg);
+}
+
+.boton-estado-btn-default{
+	background:rgb(49, 34, 39); 
+    border: 1.5px inset rgb(198, 152, 63); 
+    border-radius: 5px;
+    color: white; 
+    font-family: 'Montserrat', sans-serif;
+    transition: .3s ease all;
+    text-align: center;
+    text: white;
+    font-size: 28px;
+ 
+}
+
+.boton-estado-btn-default:hover{
+	background:rgb(0, 148, 255); 
+    border: 1.5px outset rgb(0, 100, 173); 
+    border-radius: 5px;
+    color: white; 
+    font-family: 'Montserrat', sans-serif;
+    transition: .3s ease all;
+    text-align: center;
+    text: white;
+    font-size: 28px;
+ 
+}
+
+
+body.muchotexto{
+	text-align: center;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 28px;
+}
+
+button.logout{
+	background: rgb(51,111,207); 
+    border: 1.5px inset rgb(13,60,135); 
+    border-radius: 5px;
+    color: white; /* White text */
+    font-family: 'Montserrat', sans-serif;
+    transition: .1s ease all;
+    text-align: center;
+    box-shadow: 0 0.4px 0.4px rgba(128, 128, 128, 0.109),
+    0 1px 1px rgba(128, 128, 128, 0.155),
+    0 2.1px 2.1px rgba(128, 128, 128, 0.195),
+    0 4.4px 4.4px rgba(128, 128, 128, 0.241),
+    0 12px 12px rgba(128, 128, 128, 0.35);
+    font-size: 28px;
+	
+}
+
+
+
+button.logout:hover{
+	background-color: rgb(0, 243, 243); /* Green background */
+    border: 2px outset rgb(0, 192, 198); /* Green border */
+    color: rgb(0,0,0); /* White text */
+    box-shadow: 0 0.4px 0.4px rgba(128, 128, 128, 0.109),
+    0 1px 1px rgba(128, 128, 128, 0.155),
+    0 2.1px 2.1px rgba(128, 128, 128, 0.195),
+    0 4.4px 4.4px rgba(128, 128, 128, 0.241),
+    0 12px 12px rgba(128, 128, 128, 0.35);
+}
+
+
+
+body.fondo_paciente{
+	background-image: url("https://img.freepik.com/foto-gratis/doctor-feliz-sujetando-portapapeles-sus-pacientes_1098-2176.jpg?size=626&ext=jpg");
+
+	
+
+}
+.caja{
+	font-family: 'Comic sans', cursive;
+	
+	color:black;
+	
+
+}
+
+.redirect{
+	background-color: rgb(177,198,231);
+	border: 2px inset rgb(119,152,203);
+	border-radius: 5px;
+	color:white;
+	font-family: 'Montserrat', sans-serif;
+    transition: .3s ease all;
+    text-align: center;
+    align-items: center;
+    padding: 5px 5px;
+    box-shadow: 0 0.4px 0.4px rgba(128, 128, 128, 0.109),
+    0 1px 1px rgba(128, 128, 128, 0.155),
+    0 2.1px 2.1px rgba(128, 128, 128, 0.195),
+    0 4.4px 4.4px rgba(128, 128, 128, 0.241),
+    0 12px 12px rgba(128, 128, 128, 0.35);
+	
+}
+.redirect:hover{
+	background-color: rgb(51,111,207); /* Green background */
+    border: 3px outset rgb(13,60,135); /* Green border */
+    color: rgb(0,0,0); /* White text */
+	
+}
+
+.buttons_area button{
+	background-color: #238a91; /* Green background */
+    border: 1px solid #1C258C; /* Green border */
+    color: white; /* White text */
+    padding: 10px 24px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    width: 50%; /* Set a width if needed */
+    display: block; /* Make the buttons appear below each other */
+    margin-left:auto;
+    margin-right:auto;
+    font-size: 28px;
+}
+
+.buttons_area button:not(:last-child) {
+  border-right: none; /* Prevent double borders */
+}
+
+.buttons_area a{
+	text-decoration: none;
+}
+
+/* Clear floats (clearfix hack) */
+.buttons_area:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Add a background color on hover */
+.buttons_area button:hover {
+  background-color: #16609f;
+}
+
+
+
+
+
+
+
+.buttons_area2 button{
+	background-color: #ff0000; /* Green background */
+    border: 1px solid #1C258C; /* Green border */
+    color: white; /* White text */
+    padding: 10px 24px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    width: 50%; /* Set a width if needed */
+    display: block; /* Make the buttons appear below each other */
+    margin-left:auto;
+    margin-right:auto;
+    font-size: 28px;
+}
+
+.buttons_area2 button:not(:last-child) {
+  border-right: none; /* Prevent double borders */
+}
+
+.buttons_area2 a{
+	text-decoration: none;
+}
+
+/* Clear floats (clearfix hack) */
+.buttons_area2:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Add a background color on hover */
+.buttons_area2 button:hover {
+  background-color: #16609f;
+}
+
+
+
+h1.admin{
+	text-align: center;
+	font-family: Roboto;
+}

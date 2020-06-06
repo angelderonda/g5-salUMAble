@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Página paciente</title>
+<link th:href="@{/styles/css/colores_main.css}" rel="stylesheet" />
+<link rel="shortcut icon" href="images/LOGO.png">
+<link th:href="@{/styles/css/font_awesome.css}" rel="stylesheet">
+</head>
+<body class = "fondo_paciente">
+
+	<div class="caja"><h1>Bienvenido</h1>
+	<h1 th:text="${nombrePaciente}"></h1>
+	<h1 th:text="${apellidosPaciente}"></h1>
+	 </div>
+	
+	<br>
+	
+	<a th:href="@{/paciente/estado/{pos}(pos = ${estadoCola})}">
+	<button class="redirect">Ver tu estado en la cola</button>	
+	</a>
+	
+	<br>
+	<br>
+	
+	<a th:href="@{/paciente/tratamiento/{tratamiento}(tratamiento = ${tratamientoPaciente})}">
+	<button class="redirect">Tratamiento</button>	
+	</a>
+	
+	<br>
+	<br>
+	
+	
+	<a th:href="@{/}">
+	<button class="logout">Logout</button>
+	 </a>
+	 
+	
+</body>
+</html>
