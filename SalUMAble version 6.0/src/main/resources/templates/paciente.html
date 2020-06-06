@@ -10,22 +10,28 @@
 <body class = "fondo_paciente">
 
 	<div class="caja"><h1>Bienvenido</h1>
-	<h1 th:text="${nombrePaciente}"></h1>
-	<h1 th:text="${apellidosPaciente}"></h1>
+	<h1  class="caja" th:text="${nombrePaciente}"></h1>
+	<h1  class="caja" th:text="${apellidosPaciente}"></h1>
 	 </div>
 	
 	<br>
-	
+	<div th:switch="@{p.estadoCola}">
 	<a th:href="@{/paciente/estado/{pos}(pos = ${estadoCola})}">
-	<button class="redirect">Ver tu estado en la cola</button>	
+	<button th:case="0" class="redirect">Ver tu estado en la cola</button>	
 	</a>
+	</div>
 	
 	<br>
 	<br>
 	
+	<div th:switch="@{p.estadoCola}">
 	<a th:href="@{/paciente/tratamiento/{tratamiento}(tratamiento = ${tratamientoPaciente})}">
-	<button class="redirect">Tratamiento</button>	
+	<button th:case="2" class="redirect">Tratamiento</button>	
 	</a>
+	<a th:href="@{/paciente/tratamiento/{tratamiento}(tratamiento = ${tratamientoPaciente})}">
+	<button th:case="-1" class="redirect">Tratamiento</button>	
+	</a>
+	</div>
 	
 	<br>
 	<br>

@@ -73,13 +73,13 @@ button.logout:hover{
 
 
 body.fondo_paciente{
-	background-image: url("https://img.freepik.com/foto-gratis/doctor-feliz-sujetando-portapapeles-sus-pacientes_1098-2176.jpg?size=626&ext=jpg");
+	background-image: url("https://img.wallpaper.sc/desktop/images/5k/desktop-pc-5120x2880-wallpaper_00207.jpg");
 
 	
 
 }
 .caja{
-	font-family: 'Comic sans', cursive;
+	font-family: 'Montserrat', sans-serif;
 	
 	color:black;
 	
@@ -101,12 +101,14 @@ body.fondo_paciente{
     0 2.1px 2.1px rgba(128, 128, 128, 0.195),
     0 4.4px 4.4px rgba(128, 128, 128, 0.241),
     0 12px 12px rgba(128, 128, 128, 0.35);
+    font-size: 28px;
 	
 }
 .redirect:hover{
 	background-color: rgb(51,111,207); /* Green background */
     border: 3px outset rgb(13,60,135); /* Green border */
     color: rgb(0,0,0); /* White text */
+    font-size: 28px;
 	
 }
 

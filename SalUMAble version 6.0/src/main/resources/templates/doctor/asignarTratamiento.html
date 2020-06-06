@@ -17,8 +17,8 @@
 <form class="login-form" th:action="@{/doctor/asignarTrat/{idDoctor}(idDoctor = ${idDoctor})}">
 	
 	<div class="form-control">
-	<p><label for="sintomas">Tratamiento:</label></p>
-	<p><textarea id="texto" rows="4" cols="40" placeholder="Escriba el tratamiento" th:name="tratamiento"></textarea></p>
+	<p><label for="sintomas">Tratamiento*:</label></p>
+	<p><textarea id="texto" rows="4" cols="40" placeholder="Escriba el tratamiento" th:name="tratamiento" required></textarea></p>
 	</div>
 	
 	<input class="btn" type="submit" value="Enviar">

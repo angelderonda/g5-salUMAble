@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Registrar paciente</title>
+<title>Posicion de la cola</title>
 <link th:href="@{/styles/css/cool_form.css}" rel="stylesheet" />
 <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600|Open+Sans" rel="stylesheet"> 
 <link th:href="@{/styles/css/font_awesome.css}" rel="stylesheet">
@@ -11,10 +11,14 @@
 </head>
 <body>
 <div class = "titulo">
-<h1>Posicion en la cola de espera</h1>
+<h1>Tu posición en la cola de espera es:</h1>
 </div>
+
 <h1 th:text="${pos}"></h1>
 
 
-<a th:href="@{/paciente}"><button class="redirect">Volver</button></a>
+
+<a th:href="@{/paciente}">
+<button class="redirect">Volver</button>
+</a>
 </html>
