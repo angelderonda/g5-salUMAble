@@ -38,55 +38,7 @@ public class UsuarioPaciente extends Usuario implements Comparable<UsuarioPacien
 	private String tratamiento;
 	
 
-	public String getNombre() {
-		return nombre;
-	}
-
-	public String getApellidos() {
-		return apellidos;
-	}
-
-	public String getDNI() {
-		return DNI;
-	}
-
-	public int getPrioridad() {
-		return prioridad;
-	}
-
-	public Date getEntrada() {
-		return entrada;
-	}
-
-	public RamaMedica getRama() {
-		return rama;
-	}
-
-	public Integer getEdad() {
-		return edad;
-	}
-
-	public String getLocalidad() {
-		return localidad;
-	}
-
-	public String getTelefono() {
-		return telefono;
-	}
-
-	public String getSintomas() {
-		return sintomas;
-	}
-
-	public EstadoPaciente getEstado() {
-		return estado;
-	}
-
-	public String getTratamiento() {
-		return tratamiento;
-	}
-
-	/** Constructor de la clase UsuarioPaciente **/
+	// Constructor de la clase UsuarioPaciente
 	public UsuarioPaciente() {
 		estado = EstadoPaciente.EN_ESPERA;
 		doctorAsignado = null;
@@ -97,14 +49,13 @@ public class UsuarioPaciente extends Usuario implements Comparable<UsuarioPacien
 		password = format.format(entrada);
 	}
 	
-	/** Constructor de la clase UsuarioPaciente con param **/
+	// Constructor de la clase UsuarioPaciente con parametros
 	public UsuarioPaciente(String name, String surname, String dni, int priority, RamaMedica r, Date momentoEntrada) {
 		nombre = name;
 		apellidos = surname;
 		DNI = dni;
 		prioridad = priority;
 		rama = r;
-		
 		estado = EstadoPaciente.EN_ESPERA;
 		doctorAsignado = null;
 		tratamiento = null;
@@ -113,19 +64,10 @@ public class UsuarioPaciente extends Usuario implements Comparable<UsuarioPacien
 		password = format.format(entrada);
 	}
 	
+	/////////////////////////////////////// Metodos de UsuarioPaciente ///////////////////////////////////
 	
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
 	/** Funcion con la que se consigue la posicion provisional del paciente en la cola de espera.
 	 * Si el paciente esta en consulta o ha sido atendido, devuelve -1 **/
-	// Asumimos que el paciente esta en la cola ??????????????????????????????????
-	// en el diagrama devuelve un Integer y no un int
 	public int verPosicionEnCola() {
 		int pos = -1;
 		if (estado == EstadoPaciente.EN_ESPERA) {
@@ -139,59 +81,6 @@ public class UsuarioPaciente extends Usuario implements Comparable<UsuarioPacien
 		return pos;
 	}
 	
-	
-	/** Establece el doctor que se le ha asignado al paciente **/
-	// Metodo a�adido
-	public void setDoctorAsignado(UsuarioDoctor doctor) {
-		doctorAsignado = doctor;
-	}
-	
-	/** Establece el tratamiento del paciente **/
-	// Metodo a�adido
-	public void setTratamiento(String trat) {
-		tratamiento = trat;
-	}
-	
-	/** Establece el estado del paciente **/
-	public void setEstado(EstadoPaciente state) {
-		estado = state;
-	}
-	
-	/** Devuelve el doctor que tiene asignado el paciente **/
-	// Cambiado el nombre del diagrama
-	public UsuarioDoctor getDoctorAsignado() {
-		return doctorAsignado;
-	}
-	
-	// Deberia ense�ar la pantalla del paciente segun su estado
-	// Habria que a�adirlo en el diagrama
-	public void iniciarSesion() {
-		//Pantalla con el toString(), solo una
-		/*
-		if (estado == EstadoPaciente.EN_ESPERA) {
-			//Pantalla con la pos del paciente
-		} else if (estado == EstadoPaciente.EN_CONSULTA) {
-			//Pantalla con el doctor y consulta
-		} else {
-			//Pantalla con lo que se le ha recetado
-		}
-		*/
-	}
-	
-	/** Implementa el metodo de cerrar sesion **/
-	// Habria que a�adirlo en el diagrama
-//	@Override
-//	public void cerrarSesion() {
-//		
-//	}
-//	
-//	/** Implementa el metodo de mostrar ayuda **/
-//	// Habria que a�adirlo en el diagrama
-//	@Override
-//	public void mostrarAyuda() {
-//		//Muestra la pantalla de ayuda
-//	}
-//	
 	/** Escribe los datos del paciente segun el estado en el que se encuentra **/
 	public String toStringPaciente() {
 		String res = "Paciente: " + apellidos + ", " + nombre + ".\n";
@@ -262,11 +151,82 @@ public class UsuarioPaciente extends Usuario implements Comparable<UsuarioPacien
 		if (prioridad == p.prioridad) {
 			return entrada.compareTo(p.entrada);	//devuelve < 0 si es mas antigua
 		} else {
-			return prioridad - p.prioridad;		//devuelve < 0 si tiene mas prioridad (num mas peque�o)
+			return prioridad - p.prioridad;		//devuelve < 0 si tiene mas prioridad (num menor)
 		}
 	}
+	
+	
+	/////////////////////////////////////// Getters y Setters ///////////////////////////////////////////
+	
+	public String getNombre() {
+		return nombre;
+	}
 
-	public RamaMedica getRamaMedica() {
+	public String getApellidos() {
+		return apellidos;
+	}
+
+	public String getDNI() {
+		return DNI;
+	}
+
+	public int getPrioridad() {
+		return prioridad;
+	}
+
+	public Date getEntrada() {
+		return entrada;
+	}
+
+	public Integer getEdad() {
+		return edad;
+	}
+
+	public String getLocalidad() {
+		return localidad;
+	}
+
+	public String getTelefono() {
+		return telefono;
+	}
+
+	public String getSintomas() {
+		return sintomas;
+	}
+
+	public EstadoPaciente getEstado() {
+		return estado;
+	}
+
+	public String getTratamiento() {
+		return tratamiento;
+	}	
+	
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}	
+	
+	public void setDoctorAsignado(UsuarioDoctor doctor) {
+		doctorAsignado = doctor;
+	}
+	
+	public void setTratamiento(String trat) {
+		tratamiento = trat;
+	}
+	
+	public void setEstado(EstadoPaciente state) {
+		estado = state;
+	}
+	
+	public UsuarioDoctor getDoctorAsignado() {
+		return doctorAsignado;
+	}
+	
+	public RamaMedica getRama() {
 		return rama;
 	}
 

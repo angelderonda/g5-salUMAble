@@ -1,9 +1,11 @@
 package Grupo5.SalUMAble.SERVICE;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 
 import Grupo5.SalUMAble.MODEL.*;
 
@@ -24,8 +26,16 @@ public class UserService {
         userRepository.deleteById(id);
     }
 
-    public Usuario getById(Integer id) {
+    public Usuario getById(Integer id) {    	
         return userRepository.getOne(id);
     }
+    
+    public Optional<Usuario> getByUsername(String username) {    	
+    	return userRepository.findByUserName(username);
+    }
+    
+   
+   
+   
 
 }

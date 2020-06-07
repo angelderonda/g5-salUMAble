@@ -2,28 +2,45 @@ package Grupo5.SalUMAble.MODEL;
 
 import java.util.ArrayList;
 import java.util.PriorityQueue;
-import javax.persistence.*;
 
-//@Entity
 public class ColaAmpliada {
-	//@OneToMany (mappedBy = "listaDoctor", cascade= {CascadeType.REMOVE})
+	
 	ArrayList<UsuarioDoctor> listaDoctores;
-
-	//@OneToMany (mappedBy = "cola", cascade= {CascadeType.REMOVE})
-	@ElementCollection(targetClass = UsuarioPaciente.class)
-	@CollectionTable(name = "lista_pacientes")
-	@Column(name = "paciente") // Column name in person_interest	
 	PriorityQueue<UsuarioPaciente> colaPacientes;
-	/*
-	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)	
-	@Enumerated(value = EnumType.STRING)*/
+	
 	private RamaMedica rama;
-
+	
+	// Constructor de ColaAmpliada
 	public ColaAmpliada() {
 		listaDoctores = new ArrayList<UsuarioDoctor>();
 		colaPacientes = new PriorityQueue<UsuarioPaciente>();
 	}
+	
+	public void anadirPaciente(UsuarioPaciente p) {
+		colaPacientes.add(p);
+	}
+
+	public void quitarPaciente() {
+		if (!colaPacientes.isEmpty()) {
+			colaPacientes.remove();
+		}
+	}
+	
+	public void anadirDoctor(UsuarioDoctor doctor) {
+		listaDoctores.add(doctor);
+	}
+	
+	public void quitarDoctor(UsuarioDoctor doctor) {
+		if (!listaDoctores.isEmpty()) {
+			listaDoctores.remove(doctor);
+		}
+	}
+	
+	public UsuarioPaciente obtenPaciente() {
+		return colaPacientes.element();
+	}
+	
+	////////////////////////////////// GETTERS Y SETTERS //////////////////////////////////////////
 
 	public RamaMedica getRama() {
 		return rama;
@@ -32,35 +49,11 @@ public class ColaAmpliada {
 	public void setRama(RamaMedica rama) {
 		this.rama = rama;
 	}
-
-	public void anadirPaciente(UsuarioPaciente p) { // Poner en diagrama de clase tipo void
-		//colaPacientes.add(p); // Implementar bien el compareTo del usuarioPaciente(en funcion de la prioridad)
-	}
-
-	public void quitarPaciente() {
-		colaPacientes.remove();
-	}
-
-	// borrar despues
-	public void setListaDoctores(ArrayList<UsuarioDoctor> listaDoctores) {
-		this.listaDoctores = listaDoctores;
-	}
-
+	
 	public void setColaPacientes(PriorityQueue<UsuarioPaciente> colaPacientes) {
 		this.colaPacientes = colaPacientes;
 	}
-
-	public void quitarDoctor(UsuarioDoctor doctor) {
-		listaDoctores.remove(doctor);
-	}
-
-	// A partir de anadir al diagrama de clases
-	public void anadirDoctor(UsuarioDoctor doctor) { // Poner en diagrama de clase tipo void
-		listaDoctores.add(doctor);
-	}
-
-	//
-
+	
 	public ArrayList<UsuarioDoctor> getListaDoctores() {
 		return listaDoctores;
 	}
@@ -68,5 +61,5 @@ public class ColaAmpliada {
 	public PriorityQueue<UsuarioPaciente> getColaPacientes() {
 		return colaPacientes;
 	}
-
+	
 }

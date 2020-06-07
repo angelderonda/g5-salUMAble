@@ -4,11 +4,112 @@ body.fondo_admin{
 }
 
 body.fondo_doctor{
-	background-color: aqua;
+	background-image: url(https://images6.alphacoders.com/885/thumb-1920-885208.jpg);
 }
 
+.boton-estado-btn-default{
+	background:rgb(49, 34, 39); 
+    border: 1.5px inset rgb(198, 152, 63); 
+    border-radius: 5px;
+    color: white; 
+    font-family: 'Montserrat', sans-serif;
+    transition: .3s ease all;
+    text-align: center;
+    text: white;
+    font-size: 28px;
+ 
+}
+
+.boton-estado-btn-default:hover{
+	background:rgb(0, 148, 255); 
+    border: 1.5px outset rgb(0, 100, 173); 
+    border-radius: 5px;
+    color: white; 
+    font-family: 'Montserrat', sans-serif;
+    transition: .3s ease all;
+    text-align: center;
+    text: white;
+    font-size: 28px;
+ 
+}
+
+
+body.muchotexto{
+	text-align: center;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 28px;
+}
+
+button.logout{
+	background: rgb(51,111,207); 
+    border: 1.5px inset rgb(13,60,135); 
+    border-radius: 5px;
+    color: white; /* White text */
+    font-family: 'Montserrat', sans-serif;
+    transition: .1s ease all;
+    text-align: center;
+    box-shadow: 0 0.4px 0.4px rgba(128, 128, 128, 0.109),
+    0 1px 1px rgba(128, 128, 128, 0.155),
+    0 2.1px 2.1px rgba(128, 128, 128, 0.195),
+    0 4.4px 4.4px rgba(128, 128, 128, 0.241),
+    0 12px 12px rgba(128, 128, 128, 0.35);
+    font-size: 28px;
+	
+}
+
+
+
+button.logout:hover{
+	background-color: rgb(0, 243, 243); /* Green background */
+    border: 2px outset rgb(0, 192, 198); /* Green border */
+    color: rgb(0,0,0); /* White text */
+    box-shadow: 0 0.4px 0.4px rgba(128, 128, 128, 0.109),
+    0 1px 1px rgba(128, 128, 128, 0.155),
+    0 2.1px 2.1px rgba(128, 128, 128, 0.195),
+    0 4.4px 4.4px rgba(128, 128, 128, 0.241),
+    0 12px 12px rgba(128, 128, 128, 0.35);
+}
+
+
+
 body.fondo_paciente{
-	background-color: fuchsia;
+	background-image: url("https://img.wallpaper.sc/desktop/images/5k/desktop-pc-5120x2880-wallpaper_00207.jpg");
+
+	
+
+}
+.caja{
+	font-family: 'Montserrat', sans-serif;
+	
+	color:black;
+	
+
+}
+
+.redirect{
+	background-color: rgb(177,198,231);
+	border: 2px inset rgb(119,152,203);
+	border-radius: 5px;
+	color:white;
+	font-family: 'Montserrat', sans-serif;
+    transition: .3s ease all;
+    text-align: center;
+    align-items: center;
+    padding: 5px 5px;
+    box-shadow: 0 0.4px 0.4px rgba(128, 128, 128, 0.109),
+    0 1px 1px rgba(128, 128, 128, 0.155),
+    0 2.1px 2.1px rgba(128, 128, 128, 0.195),
+    0 4.4px 4.4px rgba(128, 128, 128, 0.241),
+    0 12px 12px rgba(128, 128, 128, 0.35);
+    font-size: 28px;
+	
+}
+.redirect:hover{
+	background-color: rgb(51,111,207); /* Green background */
+    border: 3px outset rgb(13,60,135); /* Green border */
+    color: rgb(0,0,0); /* White text */
+    font-size: 28px;
+	
 }
 
 .buttons_area button{

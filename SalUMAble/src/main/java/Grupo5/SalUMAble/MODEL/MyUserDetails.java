@@ -27,6 +27,7 @@ public class MyUserDetails implements UserDetails{
 		this.authorities = Arrays.stream(user.getRoles().split(","))
 				.map(SimpleGrantedAuthority::new)
 				.collect(Collectors.toList());
+		this.active = true;
 	}
 	
 	public MyUserDetails() {
@@ -50,6 +51,14 @@ public class MyUserDetails implements UserDetails{
 	@Override
 	public boolean isAccountNonExpired() {
 		return true;
+	}
+
+	public boolean isActive() {
+		return active;
+	}
+
+	public void setActive(boolean active) {
+		this.active = active;
 	}
 
 	@Override
