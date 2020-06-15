@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Registrar paciente</title>
+<link th:href="@{/styles/css/cool_form.css}" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600|Open+Sans" rel="stylesheet"> 
+<link th:href="@{/styles/css/font_awesome.css}" rel="stylesheet">
+<link rel="shortcut icon" href="/images/LOGO.png">
+
+</head>
+<body>
+<div class = "titulo">
+<h1>Asignar tratamiento</h1>
+<p class="obligatorios"> * Los campos con el asterisco son obligatorios</p>
+</div>
+<form class="login-form" th:action="@{/doctor/asignarTrat/{idDoctor}(idDoctor = ${idDoctor})}">
+	
+	<div class="form-control">
+	<p><label for="sintomas">Tratamiento*:</label></p>
+	<p><textarea id="texto" rows="4" cols="40" placeholder="Escriba el tratamiento" th:name="tratamiento" required></textarea></p>
+	</div>
+	
+	<input class="btn" type="submit" value="Enviar">
+	</form>
+
+</body>
+</html>
