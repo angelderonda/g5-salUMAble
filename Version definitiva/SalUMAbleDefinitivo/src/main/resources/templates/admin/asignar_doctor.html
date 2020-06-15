@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Asignar doctor</title>
+<link th:href="@{/styles/css/cool_form.css}" rel="stylesheet" />
+<link
+	href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600|Open+Sans"
+	rel="stylesheet">
+<link th:href="@{/styles/css/font_awesome.css}" rel="stylesheet">
+<link rel="shortcut icon" href="/images/LOGO.png">
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+</head>
+<body>
+	<h1 style="text-align: center;">Asignar Doctor</h1>
+
+	<h2>Medicina General</h2>
+	<p th:switch="${MEDICINA_GENERALvacia}" th:case="true">La cola de pacientes de esta rama está vacía. No puedes asignar un doctor.</p>
+	
+	<table class="t01">
+	
+
+		<thead>
+			<tr>
+				<td>DNI</td>
+				<td>Nombre</td>
+				<td>Apellidos</td>
+				<td class="tablatrans"></td>
+			</tr>
+		</thead>
+
+		<tbody th:switch="${d.visibilidad}" th:case="true" th:each="d : ${MEDICINA_GENERAL}">
+
+			
+		<tr>
+				<td th:text="${d.DNI}"></td>
+				<td th:text="${d.nombre}"></td>
+				<td th:text="${d.apellidos}"></td>
+
+				<td><form class="login-form"th:action="@{/admin/asignar/{id}(id = ${d.id})}" method="post">
+						<div th:switch="${d.disponibilidad}">
+							<button th:switch="${d.disponibilidad}" th:case="true" type="submit" class="boton-estado-btn-default">Asignar</button>
+						</div>
+					</form></td>
+		</tr>
+
+		</tbody>
+
+
+
+	</table>
+	<br>
+
+	<h2>Traumatología</h2>
+		<p th:switch="${TRAUMATOLOGIAvacia}" th:case="true">La cola de pacientes de esta rama está vacía. No puedes asignar un doctor.</p>
+	
+
+	<table class="t02">
+
+		<thead>
+			<tr>
+				<td>DNI</td>
+				<td>Nombre</td>
+				<td>Apellidos</td>
+				<td class="tablatrans"></td>
+			</tr>
+		</thead>
+
+		<tbody th:switch="${d.visibilidad}" th:case="true" th:each="d : ${TRAUMATOLOGIA}">
+
+			
+		<tr>
+				<td th:text="${d.DNI}"></td>
+				<td th:text="${d.nombre}"></td>
+				<td th:text="${d.apellidos}"></td>
+
+				<td><form class="login-form"th:action="@{/admin/asignar/{id}(id = ${d.id})}" method="post">
+						<div th:switch="${d.disponibilidad}">
+							<button th:switch="${d.disponibilidad}" th:case="true" type="submit" class="boton-estado-btn-default">Asignar</button>
+						</div>
+					</form></td>
+		</tr>
+
+		</tbody>
+
+
+
+	</table>
+	<br>
+	
+	<h2>Cardiología</h2>
+	<p th:switch="${CARDIOLOGIAvacia}" th:case="true">La cola de pacientes de esta rama está vacía. No puedes asignar un doctor.</p>
+
+	<table class="t03">
+		<thead>
+
+			<tr>
+				<td>DNI</td>
+				<td>Nombre</td>
+				<td>Apellidos</td>
+				<td class="tablatrans"></td>
+			</tr>
+
+		</thead>
+		<tbody th:switch="${d.visibilidad}" th:case="true" th:each="d : ${CARDIOLOGIA}">
+
+			
+		<tr>
+				<td th:text="${d.DNI}"></td>
+				<td th:text="${d.nombre}"></td>
+				<td th:text="${d.apellidos}"></td>
+
+				<td><form class="login-form"th:action="@{/admin/asignar/{id}(id = ${d.id})}" method="post">
+						<div th:switch="${d.disponibilidad}">
+							<button th:switch="${d.disponibilidad}" th:case="true" type="submit" class="boton-estado-btn-default">Asignar</button>
+						</div>
+					</form></td>
+		</tr>
+
+		</tbody>
+	</table>
+	<h2>Neurología</h2>
+		<p th:switch="${NEUROLOGIAvacia}" th:case="true">La cola de pacientes de esta rama está vacía. No puedes asignar un doctor.</p>
+	
+
+	<table class="t04">
+		<thead>
+
+			<tr>
+				<td>DNI</td>
+				<td>Nombre</td>
+				<td>Apellidos</td>
+				<td class="tablatrans"></td>
+			</tr>
+
+		</thead>
+		<tbody th:switch="${d.visibilidad}" th:case="true" th:each="d : ${NEUROLOGIA}">
+
+			
+		<tr>
+				<td th:text="${d.DNI}"></td>
+				<td th:text="${d.nombre}"></td>
+				<td th:text="${d.apellidos}"></td>
+
+				<td><form class="login-form"th:action="@{/admin/asignar/{id}(id = ${d.id})}" method="post">
+						<div th:switch="${d.disponibilidad}">
+							<button th:switch="${d.disponibilidad}" th:case="true" type="submit" class="boton-estado-btn-default">Asignar</button>
+						</div>
+					</form></td>
+		</tr>
+
+		</tbody>
+	</table>
+	<h2>Neumología</h2>
+		<p th:switch="${NEUMOLOGIAvacia}" th:case="true">La cola de pacientes de esta rama está vacía. No puedes asignar un doctor.</p>
+	
+
+	<table class="t05">
+		<thead>
+
+			<tr>
+				<td>DNI</td>
+				<td>Nombre</td>
+				<td>Apellidos</td>
+				<td class="tablatrans"></td>
+			</tr>
+
+		</thead>
+		<tbody th:switch="${d.visibilidad}" th:case="true" th:each="d : ${NEUMOLOGIA}">
+
+			
+		<tr>
+				<td th:text="${d.DNI}"></td>
+				<td th:text="${d.nombre}"></td>
+				<td th:text="${d.apellidos}"></td>
+
+				<td><form class="login-form"th:action="@{/admin/asignar/{id}(id = ${d.id})}" method="post">
+						<div th:switch="${d.disponibilidad}">
+							<button th:switch="${d.disponibilidad}" th:case="true" type="submit" class="boton-estado-btn-default">Asignar</button>
+						</div>
+					</form></td>
+		</tr>
+
+		</tbody>
+	</table>
+	<h2>Nefrología</h2>
+		<p th:switch="${NEFROLOGIAvacia}" th:case="true">La cola de pacientes de esta rama está vacía. No puedes asignar un doctor.</p>
+	
+
+	<table class="t06">
+		<thead>
+
+			<tr>
+				<td>DNI</td>
+				<td>Nombre</td>
+				<td>Apellidos</td>
+				<td class="tablatrans"></td>
+			</tr>
+
+		</thead>
+		<tbody>
+			<tr>
+		<tbody th:switch="${d.visibilidad}" th:case="true" th:each="d : ${NEFROLOGIA}">
+
+			
+		<tr>
+				<td th:text="${d.DNI}"></td>
+				<td th:text="${d.nombre}"></td>
+				<td th:text="${d.apellidos}"></td>
+
+				<td><form class="login-form"th:action="@{/admin/asignar/{id}(id = ${d.id})}" method="post">
+						<div th:switch="${d.disponibilidad}">
+							<button th:switch="${d.disponibilidad}" th:case="true" type="submit" class="boton-estado-btn-default">Asignar</button>
+						</div>
+					</form></td>
+		</tr>
+
+		</tbody>
+	</table>
+
+	<br>
+	<br>
+
+	<button id="btn-abrir-popup" class="btn">¿Necesitas ayuda?</button>
+
+	<div class="overlay" id="overlay">
+		<div class="popup" id="popup">
+			<a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i
+				class="fas fa-times"></i></a>
+			<h3>¿Ayuda para asignar un doctor?</h3>
+			<h4>Comprueba que haya pacientes en la cola:</h4>
+			<h4>Quizás el doctor que buscas está ocupado o fuera de su horario de trabajo</h4>
+			<h4>Cualquier otra duda póngase en contacto con alguno de los desarrolladores</h4>
+
+
+
+
+		</div>
+	</div>
+	<script type="text/javascript" th:src="@{/js/popup.js}"></script>
+
+
+</body>
+</html>
